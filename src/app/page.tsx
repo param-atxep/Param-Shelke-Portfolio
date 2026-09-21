@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { Activity, ArrowDown, ArrowUpRight, Code2, Layers3, Mail, MapPin, Menu, Terminal, UserRound, X } from "lucide-react";
+import { Activity, ArrowDown, ArrowUpRight, CheckCircle2, Code2, Layers3, Mail, MapPin, Menu, Terminal, X } from "lucide-react";
 import { assets } from "@/config/assets";
 import { profile, metrics } from "@/data/profile";
 import { projects } from "@/data/projects";
@@ -10,6 +10,7 @@ import { activity, engineeringFocus, stack } from "@/data/stack";
 import { github } from "@/data/github";
 import { dsaTopics, leetcode } from "@/data/leetcode";
 import CommandCenter from "@/components/CommandCenter";
+import SocialIcon from "@/components/SocialIcon";
 
 const navItems = [
   ["01", "HOME", "#home"],
@@ -32,7 +33,7 @@ export default function Home() {
     <main className="app-frame">
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Param Shelke home">
-          <span className="brand-mark">PS</span>
+          <span className="brand-mark"><Image src={assets.logo} alt="Param.SYS logo" width={24} height={24} /></span>
           <span>
             <strong>{profile.name.toUpperCase()}</strong>
             <small>{profile.role.toUpperCase()}</small>
@@ -50,22 +51,24 @@ export default function Home() {
 
       <section id="home" className="hero section-shell">
         <div className="hero-copy">
-          <p className="eyebrow"><span>&gt;</span> INITIALIZING PARAM.SYS... <b>STATUS: ONLINE</b></p>
+          <p className="eyebrow"><span>&gt;</span> INITIALIZING PARAM.SYS... <b><CheckCircle2 size={12} /> STATUS: ONLINE</b></p>
           <h1>Building<br />Digital Systems<br />That <em>Matter.</em></h1>
           <p className="hero-lede">I design and build scalable web applications with clean architecture, modern interfaces, and robust backend systems.</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">VIEW MY WORK <ArrowUpRight size={15} /></a>
-            <a className="button" href="#contact">START A CONVERSATION <ArrowUpRight size={15} /></a>
+            <a className="button" href="#contact">START A CONVERSATION <Mail size={15} /></a>
           </div>
           <div className="hero-terminal"><Terminal size={14} /> <span>system_ready</span><span>·</span><span>profile_active</span><span>·</span><span>2026.09.21</span></div>
         </div>
         <div className="profile-stage">
           <div className="portrait-frame">
             <div className="frame-label">PORTRAIT // 001</div>
-            <Image src={assets.profile} alt="Param Shelke" fill priority sizes="(max-width: 800px) 80vw, 350px" />
+            <Image src={assets.profile} alt="Param Shelke" fill priority sizes="(max-width: 800px) 80vw, 460px" />
             <span className="corner corner-tl" /><span className="corner corner-br" />
+            <div className="portrait-footer"><span>IDENTITY_CAPTURE</span><span>PS // 001</span></div>
           </div>
           <div className="identity-panel">
+            <div className="identity-heading"><span>PROFILE_METADATA</span><i /></div>
             <Meta label="WHO_AM_I" value="Param Shelke" />
             <Meta label="ROLE" value="Full-Stack Developer / Software Engineer" />
             <Meta label="BASED_IN" value="Pune, India" icon={<MapPin size={12} />} />
@@ -127,7 +130,7 @@ export default function Home() {
 
       <section id="contact" className="contact section-shell"><div><p className="eyebrow"><span>&gt;</span> CONNECTION_AVAILABLE</p><h2>Have a system<br /><em>worth building?</em></h2></div><div className="contact-side"><p>Tell me what you&apos;re working on. I&apos;m always interested in ambitious products, hard technical problems, and teams that care about craft.</p><a className="button button-primary" href={`mailto:${profile.email}`}>GET IN TOUCH <Mail size={15} /></a></div></section>
 
-      <footer className="site-footer"><span>© {new Date().getFullYear()} PARAM SHELKE // ALTFAZE</span><span>SYSTEM_STATUS: <b>OPERATIONAL</b></span><div><a href={`https://github.com/${profile.github}`} aria-label="GitHub"><Code2 size={16} /></a><a href={`https://linkedin.com/in/${profile.linkedin}`} aria-label="LinkedIn"><UserRound size={16} /></a><a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={16} /></a><a href="#home" aria-label="Back to top"><ArrowDown size={16} className="back-top" /></a></div></footer>
+      <footer className="site-footer"><span>© {new Date().getFullYear()} PARAM SHELKE // ALTFAZE</span><span>SYSTEM_STATUS: <b>OPERATIONAL</b></span><div><a href={`https://github.com/${profile.github}`} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><SocialIcon kind="github" /></a><a href={`https://linkedin.com/in/${profile.linkedin}`} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><SocialIcon kind="linkedin" /></a><a href={`mailto:${profile.email}`} aria-label="Email"><SocialIcon kind="email" /></a><a href="#home" aria-label="Back to top"><ArrowDown size={16} className="back-top" /></a></div></footer>
     </main>
   );
 }

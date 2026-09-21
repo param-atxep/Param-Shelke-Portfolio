@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     slug: "all-job-mitra", number: "02", category: "HYPERLOCAL SERVICES", name: "ALL JOB MITRA",
     description: "A hyperlocal service and job platform designed to connect customers, workers, and service providers through location-aware discovery.",
-    image: undefined, tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Maps", "Real-Time APIs"],
+    image: "/project6alljobmitra.png", tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Maps", "Real-Time APIs"],
     status: "BUILDING", github: "https://github.com/param-atxep",
     problem: "Local service discovery is often fragmented across informal channels with little structure around matching and booking.",
     solution: "A location-aware service workflow gives customers and providers a clearer path from discovery to request.",
@@ -39,7 +39,7 @@ export const projects: Project[] = [
   {
     slug: "justkit", number: "03", category: "E-COMMERCE PLATFORM", name: "JustKit",
     description: "A modern e-commerce platform focused on electronics, gadgets, and men's lifestyle products.",
-    image: undefined, tags: ["Next.js", "TypeScript", "PostgreSQL", "Cloudinary", "Payments", "Tailwind CSS"],
+    image: "/project5justkit.png", tags: ["Next.js", "TypeScript", "PostgreSQL", "Cloudinary", "Payments", "Tailwind CSS"],
     status: "BUILDING", github: "https://github.com/param-atxep",
     problem: "A focused commerce experience needs dependable catalog, media, and payment foundations without unnecessary complexity.",
     solution: "A modular commerce foundation brings product discovery, media delivery, and checkout concerns into one maintainable application.",
